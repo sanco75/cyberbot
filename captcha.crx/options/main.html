@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 
+	<title>Plugin Options</title>
+	<style>
+	
+	.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #4CAF50;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #4CAF50;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+	
+		label {
+			display: block;
+			padding-left: 0px;
+			text-indent: 0px;
+			color: white;
+		}
+		body{
+			margin: 12px;
+			background-color: #0d0d0d;
+		}
+		input[type="checkbox"] {
+			width: 13px;
+			height: 15px;
+			padding: 0;
+			margin:0;
+			vertical-align: bottom;
+			position: relative;
+			top: -1px;
+			*overflow: hidden;
+		}
+		h2{
+			color: white;
+			 text-align: center;
+			 font-weight:bold;
+		}
+		img{
+			height: 60px;
+			width: 220px;
+		}
+	
+		form label{
+			font-weight:bold;
+		}
+		
+		div{
+			
+			background-color: #000a1a;
+		}
+		form {
+			background-color: #000a1a;
+			margin:10px; 
+		}
+		.button {
+		  padding: 4px 7px;
+		  font-size: 15px;
+		  font-weight: bold;
+		  text-align: center;
+		  cursor: pointer;
+		  outline: none;
+		  color: #000000;
+		  background-color:#000000;
+		  border: none;
+		 
+		  margin:10px;
+		  right: 0;
+		  float: right;
+		}
+
+		
+		
+		
+</style>
+</head>
+<body>
+
+<img src="/icons/img1.png">
+
+<div>
+
+	<form style="background-color:#000a1a">
+	
+		
+		<h2>Change Settings</h2>
+		<label>API / TOKEN : <input type="text" id="apiKey" value="847303b07e43a42c94c9df3e967bd940" style="width: 193px"/></label><br />
+		<label style="display: inline-block;">SERVICE : &nbsp;</label>
+		 <select id="service">
+			<option value="2captcha" id="https://2captcha.com?from=835877">2Captcha ($2.99/1000)</option>
+			<option value="anti-captcha" id="http://getcaptchasolution.com/pkzgboxjir">Anti-Captcha ($2.00/1000)</option>
+			<option value="deathbycaptcha" id="http://deathbycaptcha.com">DeathByCaptcha ($2.89/1000)</option>
+			<option value="imagetyperz" id="https://www.imagetyperz.com">ImageTyperz ($2.50/1000)</option>
+			<option value="rucaptcha" id="https://rucaptcha.com?from=5854982">ruCaptcha (&#8381;160/1000)</option>
+			<option value="bestcaptcha" id="https://bestcaptchasolver.com/ref/5be34776ac71233e4f0ab6af">BestCaptchaSolver ($2.50/1000)</option>
+			<option value="endcaptcha" id="http://endcaptcha.com/">EndCaptcha($3.99/1000)</option>
+			
+		</select><br /><br />
+		<a id="visit" href="#" style="color: #cc0000" >VISIT SELECTED SERVICE</a> 
+		<br /><br />
+		<!-- <label>ENABLED : &nbsp;<input type="checkbox" id="isEnabled" /></label><br /> -->
+		<label>AUTO SUBMIT FORM: <input type="checkbox" id="Auto" checked></label>
+		<b style="color: #ffffff; font-size: 10px">Disable for invisible ReCaptcha!</b><br /><br />
+		<label>AUTO CLICK CHECKBOX: <input type="checkbox" id="AutoClick" checked></label><br />
+		
+		<label>DELAY <b style="color: #FF0000;">(SECONDS)</b>: <input type="number" id="Delay"  style="width: 55px" /></label><br /><br /><br /><br />
+		
+		<label class="switch" style="position: absolute; right: 0; bottom:20px; right:20px; "> checked
+		  <input id="isEnabled" type="checkbox" checked> 
+		  <span class="slider round"></span>
+		</label>
+		<!-- <input type="button" value="Save Settings" id="saveButton" class="button" /> -->
+	
+		
+	</form>
+	</div>
+	<script src="main.js"></script>
+	
+</body>
+</html>
